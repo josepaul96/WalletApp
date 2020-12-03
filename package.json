@@ -1,0 +1,24 @@
+{
+  "name": "walletapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josepaul96/WalletApp.git"
+  },
+  "author": "Jose PAul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josepaul96/WalletApp/issues"
+  },
+  "homepage": "https://github.com/josepaul96/WalletApp#readme",
+  "dependencies": {
+    "eslint": "^7.14.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2"
+  }
+}
