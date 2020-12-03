@@ -35,6 +35,5 @@ function selectChain(){
 
 selectChain();
 const web3 = new Web3(new Web3.providers.HttpProvider(`https://${chainName}.infura.io/v3/${PROJECT_ID}`))
+console.log(web3)
 
-
-web3.eth.getChainId().then(console.log);
