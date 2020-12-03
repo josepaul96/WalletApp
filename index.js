@@ -2,6 +2,7 @@ require('dotenv').config(); // for using env files
 const prompt = require('prompt-sync')({sigint: true}); //for reading inputs from user
 
 const Web3 = require("web3"); //accesing web3
+
 // const fs = require("fs"); 
 const PROJECT_ID= process.env.PROJECT_ID; //getting project ID from env file
 let chainName; // to save user input for network choice
@@ -34,6 +35,30 @@ function selectChain(){
 
 
 selectChain();
-const web3 = new Web3(new Web3.providers.HttpProvider(`https://${chainName}.infura.io/v3/${PROJECT_ID}`))
-console.log(web3)
+var web3;
 
+async function connectToNetwork(){
+    web3 = new Web3(new Web3.providers.HttpProvider(`https://${chainName}.infura.io/v3/${PROJECT_ID}`))
+    try {
+        let chainID = await web3.eth.getChainId();
+        console.log(chainID);
+        console.log(`You are connceted to ${chainName} network`)
+     } catch(error) {
+        console.log(error);
+     }
+}
+
+
+function firstMenu(){
+    var walletOption = prompt("Press\n 1. Open existing Wallet\n 2.Make a new wallet");
+    switch(walletOption){
+        case "1":
+            // openWallet();
+            break;
+        case "2":
+            // newWallet();    
+    }
+}
+
+connectToNetwork();
+firstMenu();
